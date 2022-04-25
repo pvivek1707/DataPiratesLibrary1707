@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- <title>Sider Menu Bar CSS</title> -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+    *{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      text-decoration: none;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .sidebar {
+      position: fixed;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: #042331;
+      transition: all .5s ease;
+    }
+    .sidebar header {
+      font-size: 22px;
+      color: white;
+      line-height: 70px;
+      text-align: center;
+      background: #063146;
+      user-select: none;
+    }
+    .sidebar ul a{
+      display: block;
+      height: 100%;
+      width: 100%;
+      line-height: 65px;
+      font-size: 20px;
+      color: white;
+      padding-left: 40px;
+      box-sizing: border-box;
+      border-bottom: 1px solid black;
+      border-top: 1px solid rgba(255,255,255,.1);
+      transition: .4s;
+    }
+    ul li:hover a{
+      padding-left: 50px;
+    }
+    .sidebar ul a i{
+      margin-right: 16px;
+    }
+    #check{
+      display: none;
+    }
+    label #btn,label #cancel{
+      position: absolute;
+      background: #042331;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    label #btn{
+      left: 40px;
+      top: 25px;
+      font-size: 35px;
+      color: white;
+      padding: 6px 12px;
+      transition: all .5s;
+    }
+    label #cancel{
+      z-index: 1111;
+      left: -195px;
+      top: 17px;
+      font-size: 30px;
+      color: #0a5275;
+      padding: 4px 9px;
+      transition: all .5s ease;
+    }
+    #check:checked ~ .sidebar{
+      left: 0;
+    }
+    #check:checked ~ label #btn{
+      left: 250px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    #check:checked ~ label #cancel{
+      left: 195px;
+    }
+    #check:checked ~ section{
+      margin-left: 250px;
+    }
+    section{
+      background: url("https://memeburn.com/wp-content/uploads/2021/08/trnava-university-BEEyeib-am8-unsplash.jpg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+      
+    }
+      marquee {
+        width: 100%;
+        padding: 10px 0;
+        background-color: lightblue;
+      }
+    
+    </style>
+  
+  
+  
+  </head>
+  <body>
+    <img src="" alt="">
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+    <header>Pirate's Library</header>
+  <ul>
+<li><a th:href="@{/book/addBook}"><i class="fa-solid fa-book"></i>Add Book</a></li>
+<li><a th:href="@{/student/addStudent}"><i class="fa-solid fa-user-plus"></i>Add Student</a></li>
+<li><a th:href="@{/student/studentInfo}"><i class="fa-solid fa-id-card-clip"></i>Student Info</a></li>
+<li><a th:href="@{/book/issueBook}"><i class="fa-solid fa-ballot-check"></i>Issue Book</a></li>
+<li><a th:href="@{/book/returnBook}"><i class="fa-solid fa-book-circle-arrow-right"></i>Return Book</a></li>
+<li><a th:href="@{/book/bookInfoUnique}"><i class="fa-solid fa-address-book"></i>Book Info</a></li>
+<li><a th:href="@{/transaction/allTransactions}"><i class="fa-solid fa-clipboard"></i>All Records</a></li>
+<li><a th:href="@{/student/finePaymentPage}"><i class="fa-solid fa-file-invoice-dollar"></i>Fine Payment</a></li>
+<li><a th:href="@{/book/searchPage}"><i class="fa-solid fa-magnifying-glass"></i>Search</a></li>
+</ul>
+</div>
+
+<section> 
+<div><marquee direction="scroll">Data Pirates Team Welcomes you to <b>Pirates Library<b>.</marquee></div>
+
+</section>
+  </body>
+</html>
+
+
